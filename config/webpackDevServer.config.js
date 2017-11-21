@@ -84,10 +84,10 @@ module.exports = function(proxy, allowedHost) {
       // See https://github.com/facebookincubator/create-react-app/issues/387.
       disableDotRule: true,
 
-      // 指明哪些路径映射到哪个html
-      rewrites: [
-        { from: /^\/detail/, to: '/detail.html' },
-      ]
+      // // 指明哪些路径映射到哪个html
+      // rewrites: [
+      //   { from: /^\/detail/, to: '/detail.html' },
+      // ]
     },
     public: allowedHost,
     proxy,

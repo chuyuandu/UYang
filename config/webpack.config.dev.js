@@ -79,12 +79,14 @@ module.exports = {
         // initialization, it doesn't blow up the WebpackDevServer client, and
         // changing JS code would still trigger a refresh.
       ],
-      detail:[
-        require.resolve('./polyfills'),
-        require.resolve('react-dev-utils/webpackHotDevClient'),
-        require.resolve('react-error-overlay'),
-        paths.appSrc + "/js/detail.js",
-      ]
+
+      
+      // detail:[
+      //   require.resolve('./polyfills'),
+      //   require.resolve('react-dev-utils/webpackHotDevClient'),
+      //   require.resolve('react-error-overlay'),
+      //   paths.appSrc + "/js/detail.js",
+      // ]
     },
 
 
@@ -289,12 +291,14 @@ module.exports = {
       chunks: ["index"],
       template: paths.appHtml,
     }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      chunks: ["detail"],
-      template: paths.appPublic + '/detail.html',
-      filename: 'detail.html'
-    }),
+
+    // 测试的detail页面
+    // new HtmlWebpackPlugin({
+    //   inject: true,
+    //   chunks: ["detail"],
+    //   template: paths.appPublic + '/detail.html',
+    //   filename: 'detail.html'
+    // }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:
