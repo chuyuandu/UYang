@@ -6,6 +6,7 @@
   "keywords": [ 
     "demo" 
   ],
+  "homepage": "./",
   "dependencies": {
     "antd": "^2.13.10",
     "autoprefixer": "7.1.6",
