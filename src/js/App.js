@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link, BrowserRouter,Router, Switch,Route } from 'react-router-dom';
+// import { IndexRoute } from 'react-router'
 import { Affix, Layout, Popover } from 'antd';
 import {navLinks, indexProList } from './configData';
-import mp4 from './../images/index.mp4';
-import mp3 from './../images/index.mp3';
+// import mp4 from './../images/index.mp4';
+// import mp3 from './../images/index.mp3';
 import logo from './../images/logo.png';
+import indexImg from './../images/hair-dryer.jpg';
+import contactUs from './../images/contact-us.jpg';
+import aboutUyang from './../images/about-uyangjpg';
 import './../css/App.css';
 
 const {Header, Footer, Content} = Layout;
@@ -21,26 +25,34 @@ class App extends Component {
                     <HeaderContent />
                 </Affix>
             </Header>
-              <Content>
+            <Content>
+              <BrowserRouter basename="">
+                <Switch>
 
-                  <p className="App-intro">
-                      <video id="video" src={mp4}
-                             autoPlay="autoPlay" loop="loop" width="100%"></video>
-                      <audio src={mp3}
-                             loop="loop" autoPlay="autoPlay"></audio>
-                  </p>
+                    <Route path="/contact" render={()=>( <ImagCom imgsrc={contactUs} />)}/>
+                      
+                    <Route path="/about" render={()=>( <ImagCom imgsrc={aboutUyang} />)}/>
 
-                  <div>
-                      <DetailList itemList= { indexProList } />
-                  </div>
-              </Content>
+                    <Route render={()=>( <ImagCom imgsrc={indexImg} />)}/>
+                </Switch>
+                </BrowserRouter>
+            </Content>
 
-              <Footer></Footer>
+            <Footer></Footer>
           </Layout>
 
           {/*<div style={{height: '20px'}}></div>*/}
       </div>
     );
+  }
+}
+
+class ImagCom extends Component {
+  render () {
+    return (
+      <img src={this.props.imgsrc} style={{width: '100%'}}>
+      </img>
+      )
   }
 }
 
@@ -89,10 +101,12 @@ class NavButton extends Component {
       }
       else {
         return (
-          <a className={this.props.attr.disabled ? "nav-button disabled" : "nav-button" }
+            <a className={this.props.attr.disabled ? "nav-button disabled" : "nav-button" }
              href={this.props.attr.href } disabled={this.props.attr.disabled}>
               {this.props.attr.text}
           </a>
+
+
           )
       }
     }

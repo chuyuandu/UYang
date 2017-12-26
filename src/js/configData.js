@@ -16,38 +16,33 @@ const navLinks = [
     {
         text: '吹风机',
         disabled: false,
-        href: '',
-        childrenItems: [
-            {
-                title: '标题3',
-                subTitle: '副标题3',
-                link: subImage1,
-                href: 'https://www.baidu.com'
+        href: '/',
+        // childrenItems: [
+        //     {
+        //         title: '标题3',
+        //         subTitle: '副标题3',
+        //         link: subImage1,
+        //         href: 'https://www.baidu.com'
 
-            },
-            {
-                title: '标题4',
-                subTitle: '副标题4',
-                link: subImage2,
-                href: 'https://www.taobo.com'
+        //     },
+        //     {
+        //         title: '标题4',
+        //         subTitle: '副标题4',
+        //         link: subImage2,
+        //         href: 'https://www.taobo.com'
 
-            }
-        ]
+        //     }
+        // ]
     },
     {
-        text: '卷发器',
-        disabled: true,
-        href: '/detail'
+        text: '关于莜样',
+        // disabled: true,
+        href: '/about'
     },
     {
-        text: '洁面仪',
-        disabled: true,
-        href: '/todo'
-    },
-    {
-        text: '关于我们',
-        disabled: true,
-        href: '/todo'
+        text: '联系我们',
+        // disabled: true,
+        href: '/contact'
     }
 ];
 
