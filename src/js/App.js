@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, BrowserRouter,Router, Switch,Route } from 'react-router-dom';
+import { Link, BrowserRouter,Router, Switch,Route,HashRouter } from 'react-router-dom';
 // import { IndexRoute } from 'react-router'
 import { Affix, Layout, Popover } from 'antd';
 import {navLinks, indexProList } from './configData';
@@ -8,7 +8,7 @@ import {navLinks, indexProList } from './configData';
 import logo from './../images/logo.png';
 import indexImg from './../images/hair-dryer.jpg';
 import contactUs from './../images/contact-us.jpg';
-import aboutUyang from './../images/about-uyangjpg';
+import aboutUyang from './../images/about-uyang.jpg';
 import './../css/App.css';
 
 const {Header, Footer, Content} = Layout;
@@ -26,7 +26,7 @@ class App extends Component {
                 </Affix>
             </Header>
             <Content>
-              <BrowserRouter basename="">
+              <HashRouter basename="">
                 <Switch>
 
                     <Route path="/contact" render={()=>( <ImagCom imgsrc={contactUs} />)}/>
@@ -35,7 +35,7 @@ class App extends Component {
 
                     <Route render={()=>( <ImagCom imgsrc={indexImg} />)}/>
                 </Switch>
-                </BrowserRouter>
+                </HashRouter>
             </Content>
 
             <Footer></Footer>
@@ -67,7 +67,6 @@ class HeaderContent extends Component {
                     <img src={logo} />
                 </div>
                 <div className="App-title">
-
                 {navLinks.map((button, index) => (<NavButton key={index} attr={button} />))}
                 </div>
             </div>
@@ -101,10 +100,13 @@ class NavButton extends Component {
       }
       else {
         return (
-            <a className={this.props.attr.disabled ? "nav-button disabled" : "nav-button" }
-             href={this.props.attr.href } disabled={this.props.attr.disabled}>
-              {this.props.attr.text}
-          </a>
+
+                <HashRouter>
+             <Link to={ this.props.attr.href } className="nav-button">
+               {this.props.attr.text}
+            </Link>
+
+                </HashRouter>
 
 
           )

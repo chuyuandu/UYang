@@ -16,7 +16,7 @@ const navLinks = [
     {
         text: '吹风机',
         disabled: false,
-        href: '/',
+        href: './index',
         // childrenItems: [
         //     {
         //         title: '标题3',
@@ -37,12 +37,12 @@ const navLinks = [
     {
         text: '关于莜样',
         // disabled: true,
-        href: '/about'
+        href: './about'
     },
     {
         text: '联系我们',
         // disabled: true,
-        href: '/contact'
+        href: './contact'
     }
 ];
 
